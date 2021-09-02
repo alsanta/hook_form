@@ -13,22 +13,42 @@ const Login = (props) => {
                 <form action="">
                     <div className="form-group mb-3">
                         <label >First Name:</label>
+                        { fname.length < 2 && fname.length != ""
+                        ?<p className="text-danger">First name must be at least 2 characters long.</p>
+                        :""
+                        }
                         <input onChange={(e) => setFname(e.target.value)} className="form-control" type="text" />
                     </div>
                     <div className="form-group mb-3">
                         <label htmlFor="">Last Name:</label>
+                        { lname.length < 2 && lname.length != ""
+                        ?<p className="text-danger">Last name must be at least 2 characters long.</p>
+                        :""
+                        }
                         <input onChange={(e) => setLname(e.target.value)} className="form-control" type="text" />
                     </div>
                     <div className="form-group mb-3">
                         <label htmlFor="">Email:</label>
+                        { email.length < 5 && email.length != ""
+                        ?<p className="text-danger">Email must be at least 5 characters long.</p>
+                        :""
+                        }
                         <input onChange={(e) => setEmail(e.target.value)} className="form-control" type="email" />
                     </div>
                     <div className="form-group mb-3">
                         <label htmlFor="">Password:</label>
+                        { password.length < 8 && password.length != ""
+                        ?<p className="text-danger">Password must be at least 8 characters long.</p>
+                        :""
+                        }
                         <input onChange={(e) => setPassword(e.target.value)} className="form-control" type="text" />
                     </div>
                     <div className="form-group mb-3">
                         <label htmlFor="">Confirm Password:</label>
+                        { confirm != password && confirm.length != ""
+                        ?<p className="text-danger">Password doesn't match.</p>
+                        :""
+                        }
                         <input onChange={(e) => setConfirm(e.target.value)} className="form-control" type="text" />
                     </div>
                 </form>
